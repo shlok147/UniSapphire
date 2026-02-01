@@ -108,7 +108,7 @@ export const HeroSection = () => {
                   Start Your Project
                   <ArrowRight className="w-5 h-5" />
                 </HeroButton>
-                <HeroButton
+                {/* <HeroButton
                   variant="secondary"
                   size="lg"
                   onClick={() => setPortfolioOpen(true)}
@@ -116,7 +116,7 @@ export const HeroSection = () => {
                 >
                   <ExternalLink className="w-5 h-5" />
                   View Our Work
-                </HeroButton>
+                </HeroButton> */}
               </motion.div>
 
               {/* Stats */}
