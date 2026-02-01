@@ -44,8 +44,9 @@ export const Footer = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-lg sm:text-xl font-display font-bold text-foreground">
-                UniSapphire
+              <span className="text-lg sm:text-xl font-display font-bold">
+                <span className="text-muted-foreground">Uni</span>
+                <span className="text-primary">Sapphire</span>
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm text-sm sm:text-base">

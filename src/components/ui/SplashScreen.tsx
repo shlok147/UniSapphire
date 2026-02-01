@@ -7,17 +7,17 @@ interface SplashScreenProps {
 }
 
 const logoColors = [
-  "hsl(217, 91%, 60%)",   // U - Blue
-  "hsl(262, 83%, 58%)",   // n - Purple  
-  "hsl(217, 91%, 60%)",   // i - Blue
-  "hsl(210, 100%, 60%)",  // S - Light Blue
-  "hsl(217, 91%, 60%)",   // a - Blue
-  "hsl(262, 83%, 58%)",   // p - Purple
-  "hsl(210, 100%, 50%)",  // p - Bright Blue
-  "hsl(217, 91%, 60%)",   // h - Blue
-  "hsl(262, 83%, 58%)",   // i - Purple
-  "hsl(210, 100%, 55%)",  // r - Light Blue
-  "hsl(217, 91%, 60%)",   // e - Blue
+  "hsl(215, 15%, 75%)",   // U
+  "hsl(215, 15%, 75%)",   // n
+  "hsl(215, 15%, 75%)",   // i
+  "hsl(215, 95%, 50%)",   // S
+  "hsl(215, 95%, 50%)",   // a
+  "hsl(215, 95%, 50%)",   // p
+  "hsl(215, 95%, 50%)",   // p
+  "hsl(215, 95%, 50%)",   // h
+  "hsl(215, 95%, 50%)",   // i
+  "hsl(215, 95%, 50%)",   // r
+  "hsl(215, 95%, 50%)",   // e
 ];
 
 // Memoized particle component to prevent re-renders
@@ -53,14 +53,14 @@ FloatingParticle.displayName = "FloatingParticle";
 const AnimatedLetter = memo(({ letter, index, color }: { letter: string; index: number; color: string }) => (
   <motion.span
     className="inline-block"
-    initial={{ 
-      opacity: 0, 
+    initial={{
+      opacity: 0,
       y: 50,
       rotateY: -90,
       scale: 0,
     }}
-    animate={{ 
-      opacity: 1, 
+    animate={{
+      opacity: 1,
       y: 0,
       rotateY: 0,
       scale: 1,
@@ -71,7 +71,7 @@ const AnimatedLetter = memo(({ letter, index, color }: { letter: string; index: 
       stiffness: 200,
       delay: 0.4 + index * 0.08,
     }}
-    style={{ 
+    style={{
       color,
       textShadow: `0 0 30px ${color}60`,
       transformStyle: "preserve-3d",
@@ -122,8 +122,8 @@ export const SplashScreen = memo(({ isLoading }: SplashScreenProps) => {
             <motion.div
               initial={{ scale: 0.5, opacity: 0, rotateY: -180 }}
               animate={{ scale: 1, opacity: 1, rotateY: 0 }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
               className="relative"
@@ -141,7 +141,7 @@ export const SplashScreen = memo(({ isLoading }: SplashScreenProps) => {
                   ease: "easeInOut",
                 }}
               />
-              
+
               {/* Rotating border */}
               <motion.div
                 className="absolute inset-[-3px] rounded-2xl bg-gradient-to-r from-primary via-accent to-primary"
@@ -153,11 +153,11 @@ export const SplashScreen = memo(({ isLoading }: SplashScreenProps) => {
                 }}
                 style={{ padding: "2px" }}
               />
-              
+
               {/* Logo container */}
               <motion.div
                 className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-background border-2 border-primary/20 overflow-hidden flex items-center justify-center"
-                animate={{ 
+                animate={{
                   boxShadow: [
                     "0 0 20px hsla(217, 91%, 60%, 0.3)",
                     "0 0 40px hsla(217, 91%, 60%, 0.5)",
@@ -185,16 +185,16 @@ export const SplashScreen = memo(({ isLoading }: SplashScreenProps) => {
             </motion.div>
 
             {/* Google-style animated letter-by-letter logo text */}
-            <div 
+            <div
               className="text-3xl sm:text-4xl md:text-5xl font-display font-bold flex"
               style={{ perspective: "1000px" }}
             >
               {letters.map((letter, i) => (
-                <AnimatedLetter 
-                  key={i} 
-                  letter={letter} 
-                  index={i} 
-                  color={logoColors[i]} 
+                <AnimatedLetter
+                  key={i}
+                  letter={letter}
+                  index={i}
+                  color={logoColors[i]}
                 />
               ))}
             </div>
@@ -225,7 +225,7 @@ export const SplashScreen = memo(({ isLoading }: SplashScreenProps) => {
                   transition={{ duration: 1.6, ease: "easeInOut" }}
                 />
               </div>
-              
+
               {/* Animated dots */}
               <div className="flex gap-1.5">
                 {[0, 1, 2].map((i) => (

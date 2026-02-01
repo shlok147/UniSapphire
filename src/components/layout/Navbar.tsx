@@ -6,17 +6,17 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import unisapphireLogo from "@/assets/Unisapphire_17_page2.png";
 
 const logoColors = [
-  "hsl(217, 91%, 60%)",   // U
-  "hsl(262, 83%, 58%)",   // n
-  "hsl(217, 91%, 60%)",   // i
-  "hsl(210, 100%, 60%)",  // S
-  "hsl(217, 91%, 60%)",   // a
-  "hsl(262, 83%, 58%)",   // p
-  "hsl(210, 100%, 50%)",  // p
-  "hsl(217, 91%, 60%)",   // h
-  "hsl(262, 83%, 58%)",   // i
-  "hsl(210, 100%, 55%)",  // r
-  "hsl(217, 91%, 60%)",   // e
+  "hsl(215, 15%, 75%)",   // U
+  "hsl(215, 15%, 75%)",   // n
+  "hsl(215, 15%, 75%)",   // i
+  "hsl(215, 95%, 50%)",   // S
+  "hsl(215, 95%, 50%)",   // a
+  "hsl(215, 95%, 50%)",   // p
+  "hsl(215, 95%, 50%)",   // p
+  "hsl(215, 95%, 50%)",   // h
+  "hsl(215, 95%, 50%)",   // i
+  "hsl(215, 95%, 50%)",   // r
+  "hsl(215, 95%, 50%)",   // e
 ];
 
 const navLinks = [
@@ -98,7 +98,7 @@ export const Navbar = memo(() => {
 
   const handleNavClick = useCallback((href: string) => {
     setIsOpen(false);
-    
+
     // If we're not on the home page, navigate there first
     if (location.pathname !== '/') {
       navigate('/');
@@ -143,26 +143,25 @@ export const Navbar = memo(() => {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3 sm:py-4"
     >
-      <div 
-        className={`max-w-6xl mx-auto nav-glass rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-500 ${
-          scrolled ? "shadow-lg shadow-black/20" : ""
-        }`}
+      <div
+        className={`max-w-6xl mx-auto nav-glass rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-500 ${scrolled ? "shadow-lg shadow-black/20" : ""
+          }`}
       >
         <div className="flex items-center justify-between">
           {/* Animated Logo */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="flex items-center gap-2 sm:gap-3 group touch-manipulation"
             onClick={handleLinkClick}
           >
-            <motion.div 
+            <motion.div
               className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors flex-shrink-0"
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img 
-                src={unisapphireLogo} 
-                alt="UniSapphire" 
+              <img
+                src={unisapphireLogo}
+                alt="UniSapphire"
                 className="w-full h-full object-contain"
                 loading="eager"
               />
@@ -170,11 +169,11 @@ export const Navbar = memo(() => {
             {/* Animated letter-by-letter logo text */}
             <span className="text-lg sm:text-xl font-display font-bold flex">
               {letters.map((letter, i) => (
-                <AnimatedLogoLetter 
-                  key={i} 
-                  letter={letter} 
-                  index={i} 
-                  color={logoColors[i]} 
+                <AnimatedLogoLetter
+                  key={i}
+                  letter={letter}
+                  index={i}
+                  color={logoColors[i]}
                 />
               ))}
             </span>
@@ -217,7 +216,7 @@ export const Navbar = memo(() => {
               transition={{ delay: 0.6 }}
               className="ml-4"
             >
-              <HeroButton 
+              <HeroButton
                 size="sm"
                 onClick={handleContactClick}
               >
@@ -284,9 +283,9 @@ export const Navbar = memo(() => {
                     <ChevronRight className="w-5 h-5 opacity-50" />
                   </motion.button>
                 ))}
-                
+
                 <div className="h-px bg-white/10 my-2" />
-                
+
                 {moreLinks.map((link, index) => (
                   <motion.div
                     key={link.name}
@@ -304,14 +303,14 @@ export const Navbar = memo(() => {
                     </Link>
                   </motion.div>
                 ))}
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 }}
                   className="pt-4 pb-2"
                 >
-                  <HeroButton 
+                  <HeroButton
                     className="w-full min-h-[56px] text-base"
                     onClick={handleContactClick}
                   >
